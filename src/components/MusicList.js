@@ -38,7 +38,7 @@ class MusicList extends React.Component {
             <div id="MusicList">
             {
                 this.state.AllMusic.map(music => 
-                    <Card sx={{ width: 345 }} key={music.id}>
+                    <Card sx={{ width: 345 }} key={music.id} className="music-card">
                         <CardMedia
                             component="img"
                             height="140"

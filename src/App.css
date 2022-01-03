@@ -15,7 +15,7 @@ nav svg {
 }
 #home {
   background-image: url('https://scontent.ftun15-1.fna.fbcdn.net/v/t1.15752-9/270143424_342529227383112_579403468952571898_n.png?_nc_cat=104&ccb=1-5&_nc_sid=ae9488&_nc_ohc=KsEP-TvLiOoAX96h5lX&_nc_ht=scontent.ftun15-1.fna&oh=03_AVJKbyyn80PPIktSBdYNIdEI7h-5Re8zqdmAa8yH5ros4w&oe=61F5071F');
-  padding: 10em 0;
+  padding: 3em 0;
   text-align: center;
   filter: grayscale(50%);
   color: #fff;  
@@ -31,12 +31,15 @@ a{
 }
 
 #MusicList {
-  margin: 100px auto;
+  margin-bottom: 50px;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
+.music-card {
+  margin: 20px 0;
+}
 #music-details {
   height:100vh;
   background-color: #fff;
@@ -50,6 +53,9 @@ a{
   color: #FFFF;
 }
 
+#music-details p {
+  max-width: 600px;
+}
 #music-details > div {
   display: flex;
   justify-content: space-around;
