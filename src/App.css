@@ -1,38 +1,67 @@
-.App {
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+nav{
+  position: absolute;
+  right: 50%;  
+  top: 30px;
+}
+nav svg {
+  color: #000;
+  background-color: white;
+  width: 80px;
+  border-radius:100%;
+  padding: 10px;
+}
+#home {
+  background-image: url('https://scontent.ftun15-1.fna.fbcdn.net/v/t1.15752-9/270143424_342529227383112_579403468952571898_n.png?_nc_cat=104&ccb=1-5&_nc_sid=ae9488&_nc_ohc=KsEP-TvLiOoAX96h5lX&_nc_ht=scontent.ftun15-1.fna&oh=03_AVJKbyyn80PPIktSBdYNIdEI7h-5Re8zqdmAa8yH5ros4w&oe=61F5071F');
+  padding: 10em 0;
   text-align: center;
+  filter: grayscale(50%);
+  color: #fff;  
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#home h1{
+  font-size: 64px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a{
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#MusicList {
+  margin: 100px auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#music-details {
+  height:100vh;
+  background-color: #fff;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0px -40vh 100px #000000f1;
+  background-size: cover;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  color: #FFFF;
+}
+
+#music-details > div {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  padding-bottom: 25px;
 }
-
-.App-link {
-  color: #61dafb;
+#music-details svg{
+  cursor: pointer;
+  color: #FFFF;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer {
+  text-align: center;
+  color: rgb(107, 107, 107)
 }
