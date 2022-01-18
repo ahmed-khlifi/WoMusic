@@ -1,9 +1,11 @@
 import React from 'react'
 
 function Footer() {
+    const d = new Date();
+    let year = d.getFullYear();
     return (
         <footer>
-            elaborer par Hammadi Mezzien et Abdesslem M'saad
+            By Ahmed Khelifi {year} &copy; ahmed22khelifi@gmail.com
         </footer>
     )
 }

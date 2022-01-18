@@ -1,19 +1,20 @@
 import React from 'react'
 import MusicList from './MusicList'
+import Featured from './Featured'
+import Artist from './Artist'
 import Footer from './Footer'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons'
+import { motion } from "framer-motion"
 
 class Home extends React.Component {
+    
     render() {
         return (
             <React.Fragment>
-                <div id="home">
-                    <h1> Welcom to TMT</h1> 
-                    <p>Find the best music that suits you best for 2022 !</p>
-                    <FontAwesomeIcon icon={faArrowAltCircleDown} size="3x"/>
+                <div id="home" style={{backgroundImage: 'url("/static/bg.png")'}}>
+                        <h1> Welcom to WoMusic</h1> 
                 </div>
                 <MusicList />
+                <Artist />
                 <Footer />
             </React.Fragment>
         )

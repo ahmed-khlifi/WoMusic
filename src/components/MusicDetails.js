@@ -2,41 +2,43 @@ import React, {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import {db} from '../firebase'
 import {getDoc, doc} from 'firebase/firestore'
-import PlayCircleFilledWhiteIcon from '@mui/icons-material/PlayCircleFilledWhite';
+import VideoPop from './VideoPop';
 
 
-function MusicDetails() {
+function MusicDetails(props) {
 
-    const id = useParams().idMusic;
+    const id = useParams().idMusic || props.id;
     const [music, setMusic] = useState({})
     const [fetch, setFetch] = useState(false)
+    const [vid, setVid] = useState('')
     
     useEffect(() => {
         const getMusic = async () => {
             let d = doc(db, "music", id)
             let result = await getDoc(d)
+            let vlink = result.data().link.split('/')
+            setVid(vlink[3])
             setFetch(true)
-            setMusic(result.data());
-            console.log(result.data())
+            await setMusic(result.data());
         }
         if (!fetch) {
             getMusic();
         }
-    }, [])
+    })
+    
 
 
 
   return (
-    <div id="music-details" style={{backgroundImage: `url(/static/${music.thumb})`}}>
+    <div className="music-details" style={{backgroundImage: `url(/static/${music.thumb})`}}>
         <div>
             <div>
+                {props.id && <h3 className="highlighted">Featured</h3>}
                 <h1>{music.title}</h1>
                 <h2>By {music.artist}</h2>
                 <p>{music.description}</p>
             </div>
-            <a href={music.link} target="_blank">
-               <PlayCircleFilledWhiteIcon color="white" sx={{ fontSize: 70 }}/>
-            </a>
+               <VideoPop vid={vid} />
         </div>
     </div>
   );
